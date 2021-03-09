@@ -1,10 +1,10 @@
-# Grace Potter
+# Canyon Ceramics
 
 An e-commerce site where you can buy modern handmade ceramics.
 
 ## Deployed Website
 
-https://gracepotter.herokuapp.com/
+https://canyonceramics.herokuapp.com/
 
 ## Authors
 
