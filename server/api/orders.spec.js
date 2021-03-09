@@ -21,12 +21,16 @@ describe('Order routes', () => {
     })
 
     it('GET /api/orders', async () => {
-      const res = await request(app)
-        .get('/api/orders')
-        .expect(200)
+      try {
+        const res = await request(app)
+          .get('/api/orders')
+          .expect(200)
 
-      expect(res.body).to.be.an('array')
-      expect(res.body[0].ordered).to.be.equal(inCart)
+        expect(res.body).to.be.an('array')
+        expect(res.body[0].ordered).to.be.equal(inCart)
+      } catch (err) {
+        console.log(err)
+      }
     })
   }) // end describe('/api/orders')
 }) // end describe('User routes')
