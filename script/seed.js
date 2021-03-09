@@ -91,38 +91,42 @@ const products = [
 ]
 
 async function seed() {
-  await db.sync({force: true})
-  console.log('db synced!')
+  try {
+    await db.sync({force: true})
+    console.log('db synced!')
 
-  const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123', isAdmin: true}),
-    User.create({email: 'murphy@email.com', password: '123'})
-  ])
+    const users = await Promise.all([
+      User.create({email: 'cody@email.com', password: '123', isAdmin: true}),
+      User.create({email: 'murphy@email.com', password: '123'})
+    ])
 
-  /*const cartdata = await Promise.all([
+    /*const cartdata = await Promise.all([
     CartData.create({qty: 3, price: 30})
   ])*/
 
-  await Promise.all(
-    products.map(product => {
-      return Product.create(product)
-    })
-  )
+    await Promise.all(
+      products.map(product => {
+        return Product.create(product)
+      })
+    )
 
-  // await Promise.all(
-  //   orders.map(order => {
-  //     return Order.create(order)
-  //   })
-  // )
+    // await Promise.all(
+    //   orders.map(order => {
+    //     return Order.create(order)
+    //   })
+    // )
 
-  /*await Promise.all(
+    /*await Promise.all(
     cartdata.map(cartdata => {
       return CartData.create(cartdata)
     })
   )*/
 
-  console.log(`seeded ${users.length} users`)
-  console.log(`seeded successfully`)
+    console.log(`seeded ${users.length} users`)
+    console.log(`seeded successfully`)
+  } catch (error) {
+    console.error('SOMETHING WENT WRONG FETCHING PRODUCTS ', error)
+  }
 }
 
 // We've separated the `seed` function from the `runSeed` function.
