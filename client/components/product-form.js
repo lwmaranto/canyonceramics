@@ -21,7 +21,7 @@ export class ProductForm extends React.Component {
     })
   }
 
-  async handleSubmit(event) {
+  handleSubmit(event) {
     event.preventDefault()
     const addProduct = this.props.addProduct
     addProduct({
