@@ -9,7 +9,7 @@ const Navbar = ({handleClick, isLoggedIn, productCount}) => (
     <div id="header">
       <div className="logo">
         <Link to="/">
-          <h1>Grace Potter</h1>
+          <h1>Canyon Ceramics</h1>
         </Link>
       </div>
       <div className="links">

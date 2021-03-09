@@ -17,8 +17,8 @@ class AllProducts extends React.Component {
   }
 
   render() {
-    const {products} = this.props
-    const {user} = this.props
+    const products = this.props.products
+    const user = this.props.user
 
     return (
       <div>
